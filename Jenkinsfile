@@ -1,11 +1,15 @@
 pipeline {
     agent any
-
+    
+    script {
+        def MVN_HOME
+    }
+    
     stages {
         stage('Initialize') {
             steps {
                 script {
-                    def MVN_HOME = tool name: 'maven_361', type: 'maven'
+                    MVN_HOME = tool name: 'maven_361', type: 'maven'
                     echo MVN_HOME
                     sh "${MVN_HOME}/bin/mvn clean package"
                 }
