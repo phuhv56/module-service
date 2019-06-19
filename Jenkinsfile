@@ -1,10 +1,8 @@
+def MVN_HOME
+
 pipeline {
     agent any
-    
-    script {
-        def MVN_HOME
-    }
-    
+  
     stages {
         stage('Initialize') {
             steps {
